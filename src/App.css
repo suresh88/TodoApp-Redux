@@ -1,0 +1,256 @@
+
+/* ==========================
+   🔵 BASE
+========================== */
+.task_container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #1a202c;
+  margin-bottom: 20px;
+}
+
+/* ==========================
+   🔵 FILTER + ADD BUTTON
+========================== */
+.top_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter_container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter_container select,
+.filter_container input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.add_button {
+  padding: 8px 16px;
+  background: #2b6cb0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add_button:hover {
+  background: #2c5282;
+}
+
+/* ==========================
+   🔵 MODAL
+========================== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal_content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal_content h4 {
+  margin-bottom: 15px;
+  color: #1a202c;
+}
+
+.modal_content input,
+.modal_content textarea,
+.modal_content select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.modal_content textarea {
+  resize: vertical;
+  height: 60px;
+}
+
+.modal_buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal_buttons button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal_buttons button[type="submit"] {
+  background: #2b6cb0;
+  color: #fff;
+}
+
+.modal_buttons button[type="submit"]:hover {
+  background: #2c5282;
+}
+
+.modal_buttons button[type="button"] {
+  background: #e2e8f0;
+}
+
+.modal_buttons button[type="button"]:hover {
+  background: #cbd5e0;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+/* ==========================
+   🔵 TABLE
+========================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+table th {
+  background: #edf2f7;
+}
+
+.edit_button, .delete_button {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 5px;
+  transition: 0.2s;
+}
+
+.edit_button {
+  background: #38a169;
+  color: #fff;
+}
+
+.edit_button:hover {
+  background: #2f855a;
+}
+
+.delete_button {
+  background: #e53e3e;
+  color: #fff;
+}
+
+.delete_button:hover {
+  background: #c53030;
+}
+
+.no_data {
+  text-align: center;
+  margin: 20px 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+/* ==========================
+   🔵 PAGINATION
+========================== */
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 6px 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination button.active {
+  background: #2b6cb0;
+  color: #fff;
+  border-color: #2b6cb0;
+}
+
+.pagination button:hover:not(.active) {
+  background: #edf2f7;
+}
+
+/* ==========================
+   🔵 ANIMATION
+========================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* ==========================
+   🔵 RESPONSIVE
+========================== */
+@media (max-width: 500px) {
+  .top_bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal_content {
+    width: 95%;
+  }
+
+  table th, table td {
+    font-size: 12px;
+  }
+}
